@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+composer install;
+cp ./app/etc/env.php ./app/etc/env.original.php;
+npm i;
+php -f ./bin/magento setup:upgrade \
+&& php -f ./bin/magento setup:di:compile \
+&& php -f ./bin/magento indexer:reindex \
+&& php -f ./bin/magento setup:static-content:deploy -f \
+&& php -f ./bin/magento cache:flush; 
+php -f ./bin/magento deploy:mode:set developer \
+&& composer dump-autoload -o;
+echo "Magento 2 updated successfully!"

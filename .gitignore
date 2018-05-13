@@ -1,0 +1,15 @@
+#ignore Magento 2 repo and large npm folder
+/.npm
+/.composer/cache
+/.composer/.htaccess
+/.docker-sync
+
+#ignore Phpstorm files
+/.idea
+/nbproject/
+
+#Database dump folder
+#/db_dump
+
+#ignore unison
+.unison

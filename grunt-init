@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+docker-compose exec --user app phpfpm npm i grunt
+docker-compose exec --user app phpfpm npm i
+./magento deploy:mode:set developer

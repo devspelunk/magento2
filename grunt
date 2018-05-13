@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+if [ -z "$1" ]
+  then
+    docker-compose exec --user app phpfpm grunt exec
+    docker-compose exec --user app phpfpm grunt less
+    docker-compose exec --user app phpfpm grunt deploy
+    docker-compose exec --user app phpfpm grunt watch
+else
+    docker-compose exec --user app phpfpm grunt exec:$@
+    docker-compose exec --user app phpfpm grunt less:$@
+    docker-compose exec --user app phpfpm grunt watch:$@
+fi

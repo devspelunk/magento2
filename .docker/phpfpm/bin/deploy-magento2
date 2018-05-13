@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+composer install;
+chmod u+w -R ./var ./vendor ./pub/static ./pub/media ./app/etc \
+&& chmod u+x ./bin/magento;
+cp ./app/etc/env.original.php ./app/etc/env.php;
+php -f ./bin/magento setup:db-schema:upgrade;
+cp ~/.composer/auth.json var/composer_home/auth.json \
+&& php -f ./bin/magento indexer:set-mode schedule;
+php -f ./bin/magento setup:upgrade \
+&& php -f ./bin/magento setup:di:compile \
+&& php -f ./bin/magento indexer:reindex \
+&& php -f ./bin/magento setup:static-content:deploy -f \
+&& php -f ./bin/magento cache:flush;
+npm i;
+php -f ./bin/magento admin:user:create \
+    --admin-firstname=Magento \
+    --admin-lastname=Commerce \
+    --admin-email=admin@mocdemo.com \
+    --admin-user=magento2 \
+    --admin-password=admin123;   
+php -f ./bin/magento deploy:mode:set developer \
+&& composer dump-autoload -o;
+echo "Magento 2 deployed successfully!"

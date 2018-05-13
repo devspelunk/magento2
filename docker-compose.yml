@@ -1,0 +1,83 @@
+version: '2.3'
+services:
+  app:
+    image: test/nginx-magento2
+    build: .docker/nginx
+    ports:
+      - 80:80
+    volumes: &appvolumes
+      - ./src/:/var/www/html
+      - .composer:/var/www/.composer
+      - .npm:/var/www/.npm
+    depends_on:
+      - db
+      - phpfpm
+    networks:
+      - wwwnet
+
+  phpfpm:
+    image: test/php7.1-fpm-magento2 
+    build: .docker/phpfpm
+    volumes: *appvolumes
+    environment:
+      XDEBUG_CONFIG: "remote_host=10.254.254.254"
+      PHP_IDE_CONFIG: "serverName=Docker"
+    depends_on:
+      - db
+    networks:
+      - wwwnet
+      - dbnet
+
+  db:
+    image: percona:5.7.20
+    ports:
+      - "3306:3306"
+    env_file:
+      - .docker/mysql/env/mysql.env
+    volumes:
+      - dbdata:/var/lib/mysql
+    #  - "./db_dump:/home"
+    networks:
+      - dbnet
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    env_file:
+      - .docker/phpmyadmin/env/phpymadmin.env
+    ports:
+     - "8080:80"
+    networks:
+      - wwwnet
+      - dbnet
+
+  redis:
+    image: redis:3.2
+    ports:
+     - "6379"
+    networks:
+      - dbnet
+
+  redis-session:
+    image: redis:3.2
+    ports:
+     - "6379"
+    networks:
+      - dbnet
+
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - "1025:1025"
+      - "8025:8025"
+    networks:
+      - wwwnet
+
+networks:
+  wwwnet:
+    driver: bridge
+  dbnet:
+    driver: bridge
+
+volumes:
+  dbdata:
+    driver: local
