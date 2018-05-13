@@ -29,7 +29,7 @@ services:
       - dbnet
 
   db:
-    image: percona:5.7.20
+    image: mariadb:latest
     ports:
       - "3306:3306"
     env_file:
