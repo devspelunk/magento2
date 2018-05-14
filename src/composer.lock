@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d12b5391db22ffb6b88819afd37c0ad9",
+    "content-hash": "25ee945ff73feb2312e0214baaf7596e",
     "packages": [
         {
             "name": "amzn/amazon-pay-and-login-magento-2-module",
@@ -663,6 +663,61 @@
             "description": "dotmailer integration for magento 2"
         },
         {
+            "name": "elasticsearch/elasticsearch",
+            "version": "v5.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/elastic/elasticsearch-php.git",
+                "reference": "4b29a4121e790bbfe690d5ee77da348b62d48eb8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/elastic/elasticsearch-php/zipball/4b29a4121e790bbfe690d5ee77da348b62d48eb8",
+                "reference": "4b29a4121e790bbfe690d5ee77da348b62d48eb8",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/ringphp": "~1.0",
+                "php": "^5.6|^7.0",
+                "psr/log": "~1.0"
+            },
+            "require-dev": {
+                "cpliakas/git-wrapper": "~1.0",
+                "doctrine/inflector": "^1.1",
+                "mockery/mockery": "0.9.4",
+                "phpunit/phpunit": "^4.7|^5.4",
+                "sami/sami": "~3.2",
+                "symfony/finder": "^2.8",
+                "symfony/yaml": "^2.8"
+            },
+            "suggest": {
+                "ext-curl": "*",
+                "monolog/monolog": "Allows for client-level logging and tracing"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Elasticsearch\\": "src/Elasticsearch/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Zachary Tong"
+                }
+            ],
+            "description": "PHP Client for Elasticsearch",
+            "keywords": [
+                "client",
+                "elasticsearch",
+                "search"
+            ],
+            "time": "2017-11-08T17:04:47+00:00"
+        },
+        {
             "name": "guzzlehttp/guzzle",
             "version": "6.3.3",
             "source": {
@@ -842,6 +897,107 @@
                 "url"
             ],
             "time": "2017-03-20T17:10:46+00:00"
+        },
+        {
+            "name": "guzzlehttp/ringphp",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/RingPHP.git",
+                "reference": "dbbb91d7f6c191e5e405e900e3102ac7f261bc0b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/RingPHP/zipball/dbbb91d7f6c191e5e405e900e3102ac7f261bc0b",
+                "reference": "dbbb91d7f6c191e5e405e900e3102ac7f261bc0b",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/streams": "~3.0",
+                "php": ">=5.4.0",
+                "react/promise": "~2.0"
+            },
+            "require-dev": {
+                "ext-curl": "*",
+                "phpunit/phpunit": "~4.0"
+            },
+            "suggest": {
+                "ext-curl": "Guzzle will use specific adapters if cURL is present"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GuzzleHttp\\Ring\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                }
+            ],
+            "description": "Provides a simple API and specification that abstracts away the details of HTTP into a single PHP function.",
+            "time": "2015-05-20T03:37:09+00:00"
+        },
+        {
+            "name": "guzzlehttp/streams",
+            "version": "3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/streams.git",
+                "reference": "47aaa48e27dae43d39fc1cea0ccf0d84ac1a2ba5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/streams/zipball/47aaa48e27dae43d39fc1cea0ccf0d84ac1a2ba5",
+                "reference": "47aaa48e27dae43d39fc1cea0ccf0d84ac1a2ba5",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GuzzleHttp\\Stream\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                }
+            ],
+            "description": "Provides a simple abstraction over streams of data",
+            "homepage": "http://guzzlephp.org/",
+            "keywords": [
+                "Guzzle",
+                "stream"
+            ],
+            "time": "2014-10-12T19:18:40+00:00"
         },
         {
             "name": "justinrainbow/json-schema",
@@ -7659,6 +7815,52 @@
             "time": "2018-01-20T00:28:24+00:00"
         },
         {
+            "name": "react/promise",
+            "version": "v2.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/reactphp/promise.git",
+                "reference": "62785ae604c8d69725d693eb370e1d67e94c4053"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reactphp/promise/zipball/62785ae604c8d69725d693eb370e1d67e94c4053",
+                "reference": "62785ae604c8d69725d693eb370e1d67e94c4053",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "React\\Promise\\": "src/"
+                },
+                "files": [
+                    "src/functions_include.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jan Sorgalla",
+                    "email": "jsorgalla@gmail.com"
+                }
+            ],
+            "description": "A lightweight implementation of CommonJS Promises/A for PHP",
+            "keywords": [
+                "promise",
+                "promises"
+            ],
+            "time": "2017-03-25T12:08:31+00:00"
+        },
+        {
             "name": "seld/cli-prompt",
             "version": "1.0.3",
             "source": {
@@ -7876,6 +8078,99 @@
             "description": "An extendable framework for version control hooks.",
             "abandoned": "phpro/grumphp",
             "time": "2014-09-22T08:40:36+00:00"
+        },
+        {
+            "name": "smile/elasticsuite",
+            "version": "2.5.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Smile-SA/elasticsuite.git",
+                "reference": "5d8cc7a869e92ea6efb4f87ec38f774a2dd3a22a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Smile-SA/elasticsuite/zipball/5d8cc7a869e92ea6efb4f87ec38f774a2dd3a22a",
+                "reference": "5d8cc7a869e92ea6efb4f87ec38f774a2dd3a22a",
+                "shasum": ""
+            },
+            "require": {
+                "elasticsearch/elasticsearch": "~2.3.2|~5.1",
+                "magento/framework": ">=101.0.0",
+                "magento/magento-composer-installer": "*",
+                "magento/module-backend": ">=100.2.0",
+                "magento/module-catalog": ">=102.0.0",
+                "magento/module-catalog-search": ">=100.2.0",
+                "magento/module-store": ">=100.2.0"
+            },
+            "replace": {
+                "smile/module-elasticsuite-catalog": "self.version",
+                "smile/module-elasticsuite-catalog-optimizer": "self.version",
+                "smile/module-elasticsuite-catalog-rule": "self.version",
+                "smile/module-elasticsuite-core": "self.version",
+                "smile/module-elasticsuite-swatches": "self.version",
+                "smile/module-elasticsuite-thesaurus": "self.version",
+                "smile/module-elasticsuite-tracker": "self.version",
+                "smile/module-elasticsuite-virtual-category": "self.version"
+            },
+            "require-dev": {
+                "smile/magento2-smilelab-quality-suite": "^1.0.4"
+            },
+            "type": "magento2-component",
+            "extra": {
+                "map": [
+                    [
+                        "src/lib/web/fonts/elasticsuite",
+                        "lib/web/fonts/elasticsuite"
+                    ]
+                ],
+                "branch-alias": {
+                    "dev-master": "2.6.x-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/module-elasticsuite-core/registration.php",
+                    "src/module-elasticsuite-catalog/registration.php",
+                    "src/module-elasticsuite-catalog-optimizer/registration.php",
+                    "src/module-elasticsuite-catalog-rule/registration.php",
+                    "src/module-elasticsuite-swatches/registration.php",
+                    "src/module-elasticsuite-thesaurus/registration.php",
+                    "src/module-elasticsuite-tracker/registration.php",
+                    "src/module-elasticsuite-virtual-category/registration.php"
+                ],
+                "psr-4": {
+                    "Smile\\ElasticsuiteCore\\": "src/module-elasticsuite-core",
+                    "Smile\\ElasticsuiteCatalog\\": "src/module-elasticsuite-catalog",
+                    "Smile\\ElasticsuiteCatalogOptimizer\\": "src/module-elasticsuite-catalog-optimizer",
+                    "Smile\\ElasticsuiteCatalogRule\\": "src/module-elasticsuite-catalog-rule",
+                    "Smile\\ElasticsuiteSwatches\\": "src/module-elasticsuite-swatches",
+                    "Smile\\ElasticsuiteThesaurus\\": "src/module-elasticsuite-thesaurus",
+                    "Smile\\ElasticsuiteTracker\\": "src/module-elasticsuite-tracker",
+                    "Smile\\ElasticsuiteVirtualCategory\\": "src/module-elasticsuite-virtual-category"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "OSL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Aurélien FOUCRET",
+                    "email": "aurelien.foucret@smile.fr"
+                }
+            ],
+            "description": "Smile ElasticSuite - Magento2 Merchandising built on ElasticSearch",
+            "homepage": "https://github.com/Smile-SA/elasticsuite",
+            "keywords": [
+                "core",
+                "elasticsearch",
+                "magento",
+                "magento2",
+                "merchandising",
+                "search",
+                "setup"
+            ],
+            "time": "2018-05-07T07:56:24+00:00"
         },
         {
             "name": "symfony/console",
