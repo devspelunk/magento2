@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "25ee945ff73feb2312e0214baaf7596e",
+    "content-hash": "ea7fd43dd263500dd92cdce9658006e3",
     "packages": [
         {
             "name": "amzn/amazon-pay-and-login-magento-2-module",
@@ -8767,6 +8767,82 @@
                 "proprietary"
             ],
             "description": "Vertex Tax component for Magento 2"
+        },
+        {
+            "name": "wapone/base",
+            "version": "0.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/WaPoNe/module-wapone-base.git",
+                "reference": "5bd2be8382acf06a9af89020311442c55e98c09b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/WaPoNe/module-wapone-base/zipball/5bd2be8382acf06a9af89020311442c55e98c09b",
+                "reference": "5bd2be8382acf06a9af89020311442c55e98c09b",
+                "shasum": ""
+            },
+            "require": {
+                "magento/magento-composer-installer": "*"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "WaPoNe\\Base\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "OSL 3.0"
+            ],
+            "description": "A common library for Magento 2 extensions developed by WaPoNe",
+            "time": "2017-12-22T17:28:30+00:00"
+        },
+        {
+            "name": "wapone/module-cookie-notification",
+            "version": "0.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/WaPoNe/module-cookie-notification.git",
+                "reference": "5a5f4e7668d5b56519a0eb47c2139802f22e659f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/WaPoNe/module-cookie-notification/zipball/5a5f4e7668d5b56519a0eb47c2139802f22e659f",
+                "reference": "5a5f4e7668d5b56519a0eb47c2139802f22e659f",
+                "shasum": ""
+            },
+            "require": {
+                "magento/framework": "100.0.*|100.1.*|101.0.*",
+                "wapone/base": "*"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "WaPoNe\\CookieNotification\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "WaPoNe",
+                    "email": "michele@fantetti.net",
+                    "homepage": "http://www.fantetti.net",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Magento 2 extension to inform users about use and management of your website cookies",
+            "time": "2017-12-04T08:08:14+00:00"
         },
         {
             "name": "zendframework/zend-captcha",
