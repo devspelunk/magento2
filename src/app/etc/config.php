@@ -142,7 +142,7 @@ return [
     'Dotdigitalgroup_Email' => 1,
     'Magento_WishlistAnalytics' => 1,
     'Magento_WishlistSampleData' => 1,
-    'Mastering_SampleModule' => 1,
+    'SampleWork_CookieModule' => 1,
     'Shopial_Facebook' => 1,
     'Smile_ElasticsuiteCore' => 0,
     'Smile_ElasticsuiteCatalog' => 0,
@@ -153,6 +153,8 @@ return [
     'Smile_ElasticsuiteTracker' => 0,
     'Smile_ElasticsuiteVirtualCategory' => 0,
     'Temando_Shipping' => 1,
-    'Vertex_Tax' => 1
+    'Vertex_Tax' => 1,
+    'WaPoNe_Base' => 1,
+    'WaPoNe_CookieNotification' => 1
   ]
 ];
